@@ -1,6 +1,6 @@
 # Availability and reproduction boundary
 
-The authors approved MIT licensing for owned code and shareable outputs on November 19, 2026. Public availability is recorded in revision/public-release-receipt.json after unauthenticated verification. The limited code/audit artifact is not EvidenceGraph-20K.
+The authors approved MIT licensing for owned code and shareable outputs on November 19, 2026. The repository https://github.com/lexuanbach/wsdm2027-evidencegraph-audit is public; anonymous API and license access were verified on November 19. The limited code/audit artifact is not EvidenceGraph-20K.
 
 The artifact reproduces seven tables, 18 numerical bindings, the complete retrospective threshold grid, and three historical covariance prediction arms on the same 359 dev / 371 test claims. Paired claim bootstrap uses 1,000 draws and seed 217; it does not refit covariance or select using test labels. Weight uniformity, other grid arms and shared-scorer results remain summary-only. Original hashes, source commit and deidentification are documented. All claim IDs are consistently replaced; the mapping is private and excluded.
 
