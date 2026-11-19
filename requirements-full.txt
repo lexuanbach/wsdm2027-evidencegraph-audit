@@ -1,0 +1,12 @@
+# Additional packages for rerunning the full pipeline (models, retrieval,
+# paraphrase generation, hosted answering). Install after requirements.txt.
+-r requirements.txt
+pandas>=2.2,<3
+openai>=2.0,<4
+datasets>=3.0,<5
+transformers==5.15.0
+sentencepiece>=0.2,<1
+sacremoses>=0.1,<1
+sentence-transformers>=3.2,<6
+torch>=2.4,<3
+spacy>=3.8,<4

@@ -1,0 +1,9 @@
+# Rebuild the paper's results from stored outputs and run the tests (CPU only).
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.6.1
+joblib==1.6.0
+matplotlib==3.11.2
+requests==2.34.2
+boto3==1.44.6
+pytest==9.2.0

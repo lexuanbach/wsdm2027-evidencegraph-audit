@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "EvidenceGraph: code and stored outputs"
+license: MIT
+repository-code: "https://github.com/lexuanbach/wsdm2027-evidencegraph-audit"
+authors:
+  - family-names: Le
+    given-names: Xuan-Bach
+  - family-names: Tran-Truong
+    given-names: Phat T.
+  - family-names: Ha Xuan
+    given-names: Son
+  - family-names: Nguyen
+    given-names: Duy
+preferred-citation:
+  type: conference-paper
+  title: "EvidenceGraph: Measuring and Controlling Repeated Evidence in Retrieval-Augmented Verification"
+  authors:
+    - family-names: Le
+      given-names: Xuan-Bach
+    - family-names: Tran-Truong
+      given-names: Phat T.
+    - family-names: Ha Xuan
+      given-names: Son
+    - family-names: Nguyen
+      given-names: Duy
+  collection-title: "Proceedings of the Twentieth ACM International Conference on Web Search and Data Mining (WSDM '27)"
+  publisher:
+    name: ACM
+  year: 2027
+  doi: "10.1145/3862322.3863670"

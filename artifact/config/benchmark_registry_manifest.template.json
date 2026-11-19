@@ -1,0 +1,126 @@
+{
+  "canonical": {
+    "cost": {
+      "AVeriTeC": {
+        "closed_book": "artifact/runs/benchmarks/summaries/averitec_dev_closed_book_qwen14_cost.json",
+        "cove": "artifact/runs/benchmarks/summaries/averitec_dev_cove_qwen14_cost.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/averitec_dev_evidencegraph_qwen14_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/averitec_dev_fixed_rag_qwen14_cost.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/averitec_dev_lexical_rag_qwen14_cost.json",
+        "react": "artifact/runs/benchmarks/summaries/averitec_dev_react_qwen14_cost.json"
+      },
+      "ExpertQA": {
+        "closed_book": "artifact/runs/benchmarks/summaries/expertqa_domain_test_closed_book_qwen14_cost.json",
+        "cove": "artifact/runs/benchmarks/summaries/expertqa_domain_test_cove_qwen14_cost.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/expertqa_domain_test_evidencegraph_qwen14_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_fixed_rag_qwen14_cost.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_lexical_rag_qwen14_cost.json",
+        "react": "artifact/runs/benchmarks/summaries/expertqa_domain_test_react_qwen14_cost.json"
+      },
+      "FEVER": {
+        "closed_book": "artifact/runs/benchmarks/summaries/fever_dev_closed_book_qwen14_cost.json",
+        "cove": "artifact/runs/benchmarks/summaries/fever_dev_cove_qwen14_cost.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/fever_dev_evidencegraph_qwen14_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/fever_dev_fixed_rag_qwen14_cost.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/fever_dev_lexical_rag_qwen14_cost.json",
+        "react": "artifact/runs/benchmarks/summaries/fever_dev_react_qwen14_cost.json"
+      },
+      "HoVer": {
+        "closed_book": "artifact/runs/benchmarks/summaries/hover_dev_closed_book_qwen14_cost.json",
+        "cove": "artifact/runs/benchmarks/summaries/hover_dev_cove_qwen14_cost.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/hover_dev_evidencegraph_qwen14_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/hover_dev_fixed_rag_qwen14_cost.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/hover_dev_lexical_rag_qwen14_cost.json",
+        "react": "artifact/runs/benchmarks/summaries/hover_dev_react_qwen14_cost.json"
+      }
+    },
+    "display_name": "Qwen2.5-14B-Instruct",
+    "endpoint_audit": "artifact/runs/benchmarks/evidencegraph_endpoint_audit.json",
+    "fever_official": {
+      "closed_book": "artifact/runs/benchmarks/summaries/fever_dev_closed_book_qwen14_fever_official.json",
+      "cove": "artifact/runs/benchmarks/summaries/fever_dev_cove_qwen14_fever_official.json",
+      "evidencegraph": "artifact/runs/benchmarks/summaries/fever_dev_evidencegraph_qwen14_fever_official.json",
+      "fixed_rag": "artifact/runs/benchmarks/summaries/fever_dev_fixed_rag_qwen14_fever_official.json",
+      "lexical_rag": "artifact/runs/benchmarks/summaries/fever_dev_lexical_rag_qwen14_fever_official.json",
+      "react": "artifact/runs/benchmarks/summaries/fever_dev_react_qwen14_fever_official.json"
+    },
+    "model_requested": "qwen2.5:14b",
+    "quality": {
+      "AVeriTeC": {
+        "closed_book": "artifact/runs/benchmarks/summaries/averitec_dev_closed_book_qwen14_quality.json",
+        "cove": "artifact/runs/benchmarks/summaries/averitec_dev_cove_qwen14_quality.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/averitec_dev_evidencegraph_qwen14_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/averitec_dev_fixed_rag_qwen14_quality.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/averitec_dev_lexical_rag_qwen14_quality.json",
+        "react": "artifact/runs/benchmarks/summaries/averitec_dev_react_qwen14_quality.json"
+      },
+      "ExpertQA": {
+        "closed_book": "artifact/runs/benchmarks/summaries/expertqa_domain_test_closed_book_qwen14_quality.json",
+        "cove": "artifact/runs/benchmarks/summaries/expertqa_domain_test_cove_qwen14_quality.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/expertqa_domain_test_evidencegraph_qwen14_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_fixed_rag_qwen14_quality.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_lexical_rag_qwen14_quality.json",
+        "react": "artifact/runs/benchmarks/summaries/expertqa_domain_test_react_qwen14_quality.json"
+      },
+      "FEVER": {
+        "closed_book": "artifact/runs/benchmarks/summaries/fever_dev_closed_book_qwen14_quality.json",
+        "cove": "artifact/runs/benchmarks/summaries/fever_dev_cove_qwen14_quality.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/fever_dev_evidencegraph_qwen14_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/fever_dev_fixed_rag_qwen14_quality.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/fever_dev_lexical_rag_qwen14_quality.json",
+        "react": "artifact/runs/benchmarks/summaries/fever_dev_react_qwen14_quality.json"
+      },
+      "HoVer": {
+        "closed_book": "artifact/runs/benchmarks/summaries/hover_dev_closed_book_qwen14_quality.json",
+        "cove": "artifact/runs/benchmarks/summaries/hover_dev_cove_qwen14_quality.json",
+        "evidencegraph": "artifact/runs/benchmarks/summaries/hover_dev_evidencegraph_qwen14_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/hover_dev_fixed_rag_qwen14_quality.json",
+        "lexical_rag": "artifact/runs/benchmarks/summaries/hover_dev_lexical_rag_qwen14_quality.json",
+        "react": "artifact/runs/benchmarks/summaries/hover_dev_react_qwen14_quality.json"
+      }
+    }
+  },
+  "protocol": "benchmark-registry-manifest-v1",
+  "status": "template_not_results",
+  "transfer": {
+    "cost": {
+      "AVeriTeC": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/averitec_dev_evidencegraph_haiku45_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/averitec_dev_fixed_rag_haiku45_cost.json"
+      },
+      "ExpertQA": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/expertqa_domain_test_evidencegraph_haiku45_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_fixed_rag_haiku45_cost.json"
+      },
+      "FEVER": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/fever_dev_evidencegraph_haiku45_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/fever_dev_fixed_rag_haiku45_cost.json"
+      },
+      "HoVer": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/hover_dev_evidencegraph_haiku45_cost.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/hover_dev_fixed_rag_haiku45_cost.json"
+      }
+    },
+    "display_name": "Claude Haiku 4.5",
+    "endpoint_audit": "artifact/runs/benchmarks/haiku45_endpoint_audit.json",
+    "model_requested": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "quality": {
+      "AVeriTeC": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/averitec_dev_evidencegraph_haiku45_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/averitec_dev_fixed_rag_haiku45_quality.json"
+      },
+      "ExpertQA": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/expertqa_domain_test_evidencegraph_haiku45_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/expertqa_domain_test_fixed_rag_haiku45_quality.json"
+      },
+      "FEVER": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/fever_dev_evidencegraph_haiku45_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/fever_dev_fixed_rag_haiku45_quality.json"
+      },
+      "HoVer": {
+        "evidencegraph": "artifact/runs/benchmarks/summaries/hover_dev_evidencegraph_haiku45_quality.json",
+        "fixed_rag": "artifact/runs/benchmarks/summaries/hover_dev_fixed_rag_haiku45_quality.json"
+      }
+    }
+  }
+}

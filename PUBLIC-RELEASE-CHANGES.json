@@ -1,7 +1,0 @@
-{
-  "audit_report": {
-    "original_sha256": "f2e1f73ffa931dc49d4ff8d50afb01ee61180a09da659806fe67708b2d0cd9ff",
-    "staged_sha256": "28c067cbde42ddda17c6de5ed38995d6adf2cfd9a7e486b2aabaa4cb73af85c7",
-    "removed": "Non-table metadata, private item IDs, key paths, submission paths, passage index; all seven rendered tables must remain byte-identical."
-  }
-}
