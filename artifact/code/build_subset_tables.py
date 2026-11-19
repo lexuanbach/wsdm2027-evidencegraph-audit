@@ -58,7 +58,7 @@ def edge_table(nli: dict[str, Any], audit: dict[str, Any]) -> str:
         r"\label{tab:edges}",
         r"\begin{tabular}{lrrrrr}",
         r"\toprule",
-        r"& \multicolumn{3}{c}{Natural pairs ($n=469$)} & Constructed & Clusters \\",
+        r"& \multicolumn{3}{c}{Natural pairs ($n=469$)} & Constructed & Natural clusters \\",
         r"\cmidrule(lr){2-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}",
         r"System & Precision & Recall & F1 [95\% CI] & F1 [95\% CI] & ARI [95\% CI] \\",
         r"\midrule",
@@ -122,7 +122,7 @@ def corpus_table(audit: dict[str, Any]) -> str:
     """
 
     order = (
-        ("AVeriTeC", "AVeriTeC (URL)"),
+        ("AVeriTeC", "AVeriTeC (domain)"),
         ("FEVER", "FEVER (page id)"),
         ("HoVer", "HoVer (page id)"),
     )
@@ -206,7 +206,7 @@ def stratum_table(audit: dict[str, Any]) -> str:
     lines = [
         r"\begin{table}[t]",
         r"\centering\footnotesize\setlength{\tabcolsep}{3pt}",
-        r"\caption{Natural-lineage audit by predicted-probability bin. Share is the fraction of all natural pairs; Same origin counts audited positives.}",
+        r"\caption{Natural-lineage audit by predicted-probability bin. Share is the fraction of all natural pairs; Same origin counts audited positives. Recall is the share of those positives linked at $q\geq0.5$, so it is 0 or 1 by construction.}",
         r"\label{tab:stratum}",
         r"\begin{tabular}{lrrrr}",
         r"\toprule",
@@ -255,7 +255,8 @@ def ablation_table(rollout: dict[str, Any], bounded: dict[str, Any]) -> str:
         r"\centering\footnotesize\setlength{\tabcolsep}{3.6pt}",
         r"\caption{Matched controller ablations on 371 test episodes. All policies "
         r"start with five passages and may add three. Accuracy and false acceptance "
-        r"(False acc.) are percentages.}",
+        r"(False acc.) are percentages. Condition columns omit the three "
+        r"paraphrase-flood episodes.}",
         r"\label{tab:ablation}",
         r"\begin{tabular}{l rrr rrr rrr r}",
         r"\toprule",
@@ -355,7 +356,9 @@ def benchmark_table(bench: dict[str, Any], override: dict[str, Any]) -> str:
         r"\renewcommand{\arraystretch}{0.93}",
         r"\captionsetup{skip=4pt}",
         r"\caption{End-to-end results on frozen retrieval. Context deltas use "
-        r"fixed RAG, while override deltas use context.}",
+        r"fixed RAG, while override deltas use context and pair all available "
+        r"generations (FEVER 500, HoVer 494, AVeriTeC 481). F1 is macro-F1, and "
+        r"false support is a percentage.}",
         r"\label{tab:benchmarks}",
         r"\begin{tabular*}{0.86\textwidth}{@{\extracolsep{\fill}}lrrrr}",
         r"\toprule",

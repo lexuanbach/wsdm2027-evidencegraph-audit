@@ -13,8 +13,10 @@ when passages are copied, mirrored, or paraphrased from one origin.
 EvidenceGraph scores each retrieved passage, estimates which passages share an
 origin, aggregates evidence so that copies count once, and exposes these
 controls as independently switchable stages. This repository contains the
-implementation, the stored outputs behind every table and figure in the paper,
-and a one-command script that rebuilds them. The supplementary material is in
+implementation, the stored outputs behind every table and Figure 3 in the
+paper, and a one-command script that rebuilds them. Figure 2 (duplication), the
+compute totals and several diagnostic numbers in the text come from recorded
+summaries whose inputs are not included; see [Limits](#limits-of-this-release). The supplementary material is in
 [`supplement.pdf`](supplement.pdf).
 
 ## Contents
