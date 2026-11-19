@@ -1,0 +1,338 @@
+{
+  "expected_sources": 7106,
+  "expected_test_claims": 371,
+  "inputs": {
+    "dataset": {
+      "bytes": 23115458,
+      "path": "data/processed/evidencegraph20k_validated_subset.jsonl",
+      "rows": 2298,
+      "sha256": "a8c427c76ea3c255cfc76d36f08d6eb4e853d42727b6553b154bf547b2185acb"
+    },
+    "runs": {
+      "DeBERTa-large": {
+        "bytes": 5168527,
+        "model": {
+          "dataset_sha256": "a8c427c76ea3c255cfc76d36f08d6eb4e853d42727b6553b154bf547b2185acb",
+          "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+          "model_parameters": 435064835,
+          "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+          "records": 7106,
+          "scoring_protocol": "nli-source-edge-v2-content-bound",
+          "splits": [
+            "test"
+          ]
+        },
+        "path": "artifact/runs/subset_edge_episode/nli/deberta_large_test.jsonl",
+        "rows": 7106,
+        "sha256": "b39542068a744a3bd94efb0d43eb31b5f67690a3829662c9b9597d070271e983"
+      },
+      "MiniLM": {
+        "bytes": 4996006,
+        "model": {
+          "dataset_sha256": "a8c427c76ea3c255cfc76d36f08d6eb4e853d42727b6553b154bf547b2185acb",
+          "model": "cross-encoder/nli-MiniLM2-L6-H768",
+          "model_parameters": 82120707,
+          "model_revision": "b95119ce93d3e065de6214e38cd4a97b0f2f2c6d",
+          "records": 7106,
+          "scoring_protocol": "nli-source-edge-v2-content-bound",
+          "splits": [
+            "test"
+          ]
+        },
+        "path": "artifact/runs/subset_edge_episode/nli/minilm_test.jsonl",
+        "rows": 7106,
+        "sha256": "833fe0dde786882396a4330b1b169b123d64ce3928a55e9884b986a8e51bab54"
+      }
+    }
+  },
+  "is_release_denominator": false,
+  "models": {
+    "DeBERTa-large": {
+      "bootstrap_resamples": 1000,
+      "groups": {
+        "citation": {
+          "accuracy": 0.889487870619946,
+          "accuracy_high": 0.9191374663072777,
+          "accuracy_low": 0.8598382749326146,
+          "brier": 0.19120818947112006,
+          "brier_high": 0.24537685761211678,
+          "brier_low": 0.14139994617476295,
+          "ece": 0.084529915588564,
+          "ece_high": 0.11571348110700876,
+          "ece_low": 0.060926483414886386,
+          "gold_classes": [
+            "support",
+            "refute"
+          ],
+          "macro_f1": 0.9352226720647774,
+          "macro_f1_high": 0.9525517907216668,
+          "macro_f1_low": 0.9135073753047974,
+          "macro_precision": 0.9850267379679145,
+          "macro_precision_high": 0.9970414201183432,
+          "macro_precision_low": 0.9705306373641615,
+          "macro_recall": 0.8906168093657173,
+          "macro_recall_high": 0.9183211695711696,
+          "macro_recall_low": 0.8592218680269997,
+          "n_claims": 371,
+          "n_sources": 371
+        },
+        "independent": {
+          "accuracy": 0.81280353200883,
+          "accuracy_high": 0.84276161885943,
+          "accuracy_low": 0.7829317586840152,
+          "brier": 0.311806778468478,
+          "brier_high": 0.3638840489039984,
+          "brier_low": 0.26097822835148915,
+          "ece": 0.12577175162485899,
+          "ece_high": 0.15307871210822205,
+          "ece_low": 0.09984535285217597,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.6701731365934197,
+          "macro_f1_high": 0.703719882548462,
+          "macro_f1_low": 0.637512265307076,
+          "macro_precision": 0.6231437114188049,
+          "macro_precision_high": 0.6603244314135499,
+          "macro_precision_low": 0.5887775465463446,
+          "macro_recall": 0.8697268317343885,
+          "macro_recall_high": 0.8889745932549157,
+          "macro_recall_low": 0.8496081499335231,
+          "n_claims": 371,
+          "n_sources": 4530
+        },
+        "mirror": {
+          "accuracy": 0.838904109589041,
+          "accuracy_high": 0.878617504829336,
+          "accuracy_low": 0.7974002846941259,
+          "brier": 0.2775208542739251,
+          "brier_high": 0.348342576178325,
+          "brier_low": 0.21131534683971875,
+          "ece": 0.12744387179204864,
+          "ece_high": 0.1686252548586418,
+          "ece_low": 0.09296959052261106,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.8398728159136137,
+          "macro_f1_high": 0.8778039849570437,
+          "macro_f1_low": 0.8006240365410663,
+          "macro_precision": 0.8384885851880393,
+          "macro_precision_high": 0.8762055578517003,
+          "macro_precision_low": 0.80157887247839,
+          "macro_recall": 0.8575996490835277,
+          "macro_recall_high": 0.8923302360422674,
+          "macro_recall_low": 0.820797238461069,
+          "n_claims": 371,
+          "n_sources": 1825
+        },
+        "overall": {
+          "accuracy": 0.8271882915845764,
+          "accuracy_high": 0.8539279576238784,
+          "accuracy_low": 0.7995227554650174,
+          "brier": 0.2913530295217763,
+          "brier_high": 0.33627612804741924,
+          "brier_low": 0.2461665852968223,
+          "ece": 0.12069930365613706,
+          "ece_high": 0.14666706421299838,
+          "ece_low": 0.09738679857992445,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.7979893678373952,
+          "macro_f1_high": 0.8247824231370604,
+          "macro_f1_low": 0.7714371431885529,
+          "macro_precision": 0.7771362520614566,
+          "macro_precision_high": 0.8043855996519287,
+          "macro_precision_low": 0.7509590271495132,
+          "macro_recall": 0.86148145978551,
+          "macro_recall_high": 0.8847419109507392,
+          "macro_recall_low": 0.8378645195028818,
+          "n_claims": 371,
+          "n_sources": 7106
+        },
+        "paraphrase": {
+          "accuracy": 0.881578947368421,
+          "accuracy_high": 0.9124841197822141,
+          "accuracy_low": 0.8485397090238896,
+          "brier": 0.21172664204167851,
+          "brier_high": 0.2688771348445714,
+          "brier_low": 0.1597334942756201,
+          "ece": 0.09729513447535673,
+          "ece_high": 0.13025406964924227,
+          "ece_low": 0.0720360942685237,
+          "gold_classes": [
+            "support",
+            "refute"
+          ],
+          "macro_f1": 0.9310675186006443,
+          "macro_f1_high": 0.9499937933132117,
+          "macro_f1_low": 0.9080027741111965,
+          "macro_precision": 0.9852376172510471,
+          "macro_precision_high": 0.9968172647070459,
+          "macro_precision_low": 0.9711334526856252,
+          "macro_recall": 0.8830555555555555,
+          "macro_recall_high": 0.912571558969413,
+          "macro_recall_low": 0.8496832541859582,
+          "n_claims": 371,
+          "n_sources": 380
+        }
+      },
+      "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+      "model_parameters": 435064835,
+      "model_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+      "scoring_protocol": "nli-source-edge-v2-content-bound"
+    },
+    "MiniLM": {
+      "bootstrap_resamples": 1000,
+      "groups": {
+        "citation": {
+          "accuracy": 0.7169811320754716,
+          "accuracy_high": 0.7601752021563342,
+          "accuracy_low": 0.6684636118598383,
+          "brier": 0.4611023880709813,
+          "brier_high": 0.5394628353165314,
+          "brier_low": 0.38894898895306795,
+          "ece": 0.19419344359973692,
+          "ece_high": 0.23724270605374226,
+          "ece_low": 0.15245037900429534,
+          "gold_classes": [
+            "support",
+            "refute"
+          ],
+          "macro_f1": 0.8036047917353555,
+          "macro_f1_high": 0.8374231855205454,
+          "macro_f1_low": 0.7643606613009598,
+          "macro_precision": 0.9177884615384615,
+          "macro_precision_high": 0.9457838183708088,
+          "macro_precision_low": 0.884701118087857,
+          "macro_recall": 0.7217077290465373,
+          "macro_recall_high": 0.7639801960007303,
+          "macro_recall_low": 0.6742820400458437,
+          "n_claims": 371,
+          "n_sources": 371
+        },
+        "independent": {
+          "accuracy": 0.1900662251655629,
+          "accuracy_high": 0.21259079154514923,
+          "accuracy_low": 0.16812836273884418,
+          "brier": 1.4360692943294682,
+          "brier_high": 1.4843061952229384,
+          "brier_low": 1.3876382251394697,
+          "ece": 0.7149400445470221,
+          "ece_high": 0.7432046482111315,
+          "ece_low": 0.6859396933745064,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.3431157790180049,
+          "macro_f1_high": 0.3636920003747362,
+          "macro_f1_low": 0.32221217721885625,
+          "macro_precision": 0.5501033740856961,
+          "macro_precision_high": 0.5704617360954364,
+          "macro_precision_low": 0.5294700052923577,
+          "macro_recall": 0.5110518854474048,
+          "macro_recall_high": 0.5391673882342595,
+          "macro_recall_low": 0.4818846254995241,
+          "n_claims": 371,
+          "n_sources": 4530
+        },
+        "mirror": {
+          "accuracy": 0.42191780821917807,
+          "accuracy_high": 0.47318549126311016,
+          "accuracy_low": 0.3745045916037476,
+          "brier": 1.0181157654868174,
+          "brier_high": 1.110896881372777,
+          "brier_low": 0.9315803012004642,
+          "ece": 0.4903730224583247,
+          "ece_high": 0.5441646064156315,
+          "ece_low": 0.43970116028976813,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.4572175188330347,
+          "macro_f1_high": 0.4987236563257497,
+          "macro_f1_low": 0.41551430112205523,
+          "macro_precision": 0.5418725460340662,
+          "macro_precision_high": 0.5920740642842548,
+          "macro_precision_low": 0.48805904582133036,
+          "macro_recall": 0.5480618997974056,
+          "macro_recall_high": 0.5862736286430141,
+          "macro_recall_low": 0.5135224947410186,
+          "n_claims": 371,
+          "n_sources": 1825
+        },
+        "overall": {
+          "accuracy": 0.3059386433999437,
+          "accuracy_high": 0.33142975527116114,
+          "accuracy_low": 0.2824318935378945,
+          "brier": 1.2254520761116476,
+          "brier_high": 1.2686845869587746,
+          "brier_low": 1.1797834124628417,
+          "ece": 0.6015625421745221,
+          "ece_high": 0.6274195521066419,
+          "ece_low": 0.5747607190897046,
+          "gold_classes": [
+            "support",
+            "neutral",
+            "refute"
+          ],
+          "macro_f1": 0.40672658426554253,
+          "macro_f1_high": 0.43340409385307427,
+          "macro_f1_low": 0.38238685680741746,
+          "macro_precision": 0.5519459628668293,
+          "macro_precision_high": 0.5810822672487287,
+          "macro_precision_low": 0.5241816951277706,
+          "macro_recall": 0.5348138389113365,
+          "macro_recall_high": 0.5641715160815168,
+          "macro_recall_low": 0.507349633602326,
+          "n_claims": 371,
+          "n_sources": 7106
+        },
+        "paraphrase": {
+          "accuracy": 0.7289473684210527,
+          "accuracy_high": 0.7702554280610141,
+          "accuracy_low": 0.6815789473684211,
+          "brier": 0.4566797146028999,
+          "brier_high": 0.536508605331672,
+          "brier_low": 0.3871711671510978,
+          "ece": 0.19007906819644727,
+          "ece_high": 0.238778513609448,
+          "ece_low": 0.15335563831879448,
+          "gold_classes": [
+            "support",
+            "refute"
+          ],
+          "macro_f1": 0.8091012084592144,
+          "macro_f1_high": 0.8413820691730398,
+          "macro_f1_low": 0.7690082117413225,
+          "macro_precision": 0.9171400674596131,
+          "macro_precision_high": 0.9442267333749205,
+          "macro_precision_low": 0.8860497123611744,
+          "macro_recall": 0.7352777777777777,
+          "macro_recall_high": 0.7730931498914586,
+          "macro_recall_low": 0.6884746778174614,
+          "n_claims": 371,
+          "n_sources": 380
+        }
+      },
+      "model": "cross-encoder/nli-MiniLM2-L6-H768",
+      "model_parameters": 82120707,
+      "model_revision": "b95119ce93d3e065de6214e38cd4a97b0f2f2c6d",
+      "scoring_protocol": "nli-source-edge-v2-content-bound"
+    }
+  },
+  "n_claims": 371,
+  "protocol": "nli-source-edge-v2-content-bound",
+  "split": "test"
+}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Natural-lineage recovery by corpus, decomposing the pooled natural column of Table~\ref{tab:edges}. $\kappa$ is the two raters' agreement on that corpus and \emph{Same origin} its audited same-origin rate. Edge F1 is reported per corpus.}
+\label{tab:corpus}
+\begin{tabular}{lrrrrr}
+\toprule
+& & & \multicolumn{3}{c}{Edge F1} \\
+\cmidrule(lr){4-6}
+Corpus & $n$ & Same origin & \textbf{\system{}} & Reuse & Origin ID \\
+\midrule
+AVeriTeC (URL) & 159 & 0.75 & 0.804 & 0.347 & 0.312 \\
+FEVER (page id) & 156 & 0.12 & 0.309 & 0.462 & 0.273 \\
+HoVer (page id) & 154 & 0.12 & 0.337 & 0.552 & 0.000 \\
+\bottomrule
+\end{tabular}\par\vspace{3pt}
+{\footnotesize\raggedright
+Two-rater agreement by corpus: AVeriTeC $\kappa=1.000$; FEVER $\kappa=0.877$; HoVer $\kappa=0.839$\par}
+\end{table}

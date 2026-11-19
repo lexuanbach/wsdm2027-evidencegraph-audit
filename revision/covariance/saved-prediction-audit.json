@@ -1,0 +1,368 @@
+{
+  "scope": "Historical saved-output recomputation, not a new experiment or covariance refit. No test-label selection.",
+  "bootstrap": {
+    "resamples": 1000,
+    "seed": 217,
+    "unit": "claim",
+    "interval": "paired percentile 95%, exploratory, unadjusted",
+    "difference": "ridge minus uniform"
+  },
+  "metrics": {
+    "ridge_covariance": {
+      "dev": {
+        "overall": {
+          "n": 359,
+          "accuracy": 0.9331476323119777,
+          "brier": 0.06297048275830333,
+          "ece": 0.05410872443393386,
+          "log_loss": 0.2263703363139428,
+          "mean_effective_evidence": 1.670596796563269
+        },
+        "duplication": {
+          "n": 118,
+          "accuracy": 0.9322033898305084,
+          "brier": 0.05849123482322795,
+          "ece": 0.06405832347141632,
+          "log_loss": 0.22677394188085648,
+          "mean_effective_evidence": 1.740439962317198
+        },
+        "hidden_best_evidence": {
+          "n": 131,
+          "accuracy": 0.9541984732824428,
+          "brier": 0.0486847673683894,
+          "ece": 0.06267702223399259,
+          "log_loss": 0.18610054331954867,
+          "mean_effective_evidence": 1.7014735972455484
+        },
+        "paraphrase_flood": {
+          "n": 5,
+          "accuracy": 1.0,
+          "brier": 0.0007562565657205407,
+          "ece": 0.018924021200486942,
+          "log_loss": 0.01931577899569963,
+          "mean_effective_evidence": 1.751514529298051
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.9047619047619048,
+          "brier": 0.08879001707621316,
+          "ece": 0.10510812367708032,
+          "log_loss": 0.28601786214214303,
+          "mean_effective_evidence": 1.5497306716869257
+        }
+      },
+      "test": {
+        "overall": {
+          "n": 371,
+          "accuracy": 0.9353099730458221,
+          "brier": 0.05426782188382176,
+          "ece": 0.0471314402137243,
+          "log_loss": 0.19820567830258795,
+          "mean_effective_evidence": 1.7027252369518229
+        },
+        "duplication": {
+          "n": 129,
+          "accuracy": 0.9457364341085271,
+          "brier": 0.03430858542606655,
+          "ece": 0.040769380130659734,
+          "log_loss": 0.11983850347913805,
+          "mean_effective_evidence": 1.7034539226912546
+        },
+        "hidden_best_evidence": {
+          "n": 134,
+          "accuracy": 0.9701492537313433,
+          "brier": 0.03746623560348801,
+          "ece": 0.06001599737664896,
+          "log_loss": 0.15254580973873766,
+          "mean_effective_evidence": 1.7342747577683149
+        },
+        "paraphrase_flood": {
+          "n": 3,
+          "accuracy": 1.0,
+          "brier": 0.00376091649667302,
+          "ece": 0.04106540878771021,
+          "log_loss": 0.04308651967846707,
+          "mean_effective_evidence": 2.447977451823166
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.8761904761904762,
+          "brier": 0.10167424836740835,
+          "ece": 0.10424188050930887,
+          "log_loss": 0.35718801559452457,
+          "mean_effective_evidence": 1.6402738760526736
+        }
+      }
+    },
+    "ridge_precision": {
+      "dev": {
+        "overall": {
+          "n": 359,
+          "accuracy": 0.924791086350975,
+          "brier": 0.07063613647474264,
+          "ece": 0.06572798207525433,
+          "log_loss": 0.3757067875902942,
+          "mean_effective_evidence": 3561929.9986928175
+        },
+        "duplication": {
+          "n": 118,
+          "accuracy": 0.9322033898305084,
+          "brier": 0.05617341455120809,
+          "ece": 0.05615095512985828,
+          "log_loss": 0.20101484089736696,
+          "mean_effective_evidence": 189722.0064753026
+        },
+        "hidden_best_evidence": {
+          "n": 131,
+          "accuracy": 0.9389312977099237,
+          "brier": 0.061294233013794684,
+          "ece": 0.09113035988528148,
+          "log_loss": 0.2281765583913546,
+          "mean_effective_evidence": 207462.34712599058
+        },
+        "paraphrase_flood": {
+          "n": 5,
+          "accuracy": 1.0,
+          "brier": 0.0031388288006752815,
+          "ece": 0.04332083483952525,
+          "log_loss": 0.044996621501973685,
+          "mean_effective_evidence": 186060.294718489
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.8952380952380953,
+          "brier": 0.10175877531980541,
+          "ece": 0.10530462668213217,
+          "log_loss": 0.7718368882118951,
+          "mean_effective_evidence": 11697502.89351942
+        }
+      },
+      "test": {
+        "overall": {
+          "n": 371,
+          "accuracy": 0.9380053908355795,
+          "brier": 0.058337741104558395,
+          "ece": 0.08051022158056081,
+          "log_loss": 0.21334612654081336,
+          "mean_effective_evidence": 191599.26933212313
+        },
+        "duplication": {
+          "n": 129,
+          "accuracy": 0.9534883720930233,
+          "brier": 0.03202366421445248,
+          "ece": 0.04027188699227434,
+          "log_loss": 0.11733918098220263,
+          "mean_effective_evidence": 183927.2465139882
+        },
+        "hidden_best_evidence": {
+          "n": 134,
+          "accuracy": 0.9701492537313433,
+          "brier": 0.0509542359341059,
+          "ece": 0.11066036897125811,
+          "log_loss": 0.2023617495218102,
+          "mean_effective_evidence": 209758.53306283674
+        },
+        "paraphrase_flood": {
+          "n": 3,
+          "accuracy": 1.0,
+          "brier": 0.010218856328576548,
+          "ece": 0.0737509860616852,
+          "log_loss": 0.07949795029391014,
+          "mean_effective_evidence": 263403.4444595833
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.8761904761904762,
+          "brier": 0.10146404839972262,
+          "ece": 0.14121661453138998,
+          "log_loss": 0.3491399077441268,
+          "mean_effective_evidence": 175798.67007727933
+        }
+      }
+    },
+    "uniform_mean_stance": {
+      "dev": {
+        "overall": {
+          "n": 359,
+          "accuracy": 0.9275766016713092,
+          "brier": 0.06327891286375129,
+          "ece": 0.05738648863178068,
+          "log_loss": 0.22803466489096733,
+          "mean_effective_evidence": 18.908077994428968
+        },
+        "duplication": {
+          "n": 118,
+          "accuracy": 0.9322033898305084,
+          "brier": 0.056761121554868024,
+          "ece": 0.061025773070782434,
+          "log_loss": 0.22421414300851625,
+          "mean_effective_evidence": 18.966101694915253
+        },
+        "hidden_best_evidence": {
+          "n": 131,
+          "accuracy": 0.9389312977099237,
+          "brier": 0.053660418468264096,
+          "ece": 0.05763877495274477,
+          "log_loss": 0.2001196134594194,
+          "mean_effective_evidence": 20.740458015267176
+        },
+        "paraphrase_flood": {
+          "n": 5,
+          "accuracy": 1.0,
+          "brier": 0.0006490550214553966,
+          "ece": 0.017200347233474002,
+          "log_loss": 0.017535790693496055,
+          "mean_effective_evidence": 18.6
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.9047619047619048,
+          "brier": 0.08558625981107058,
+          "ece": 0.08639451810590278,
+          "log_loss": 0.2771793095638184,
+          "mean_effective_evidence": 16.571428571428573
+        }
+      },
+      "test": {
+        "overall": {
+          "n": 371,
+          "accuracy": 0.9380053908355795,
+          "brier": 0.054152504055670625,
+          "ece": 0.0585365652414419,
+          "log_loss": 0.2004647249165007,
+          "mean_effective_evidence": 19.153638814016173
+        },
+        "duplication": {
+          "n": 129,
+          "accuracy": 0.9534883720930233,
+          "brier": 0.03226757814815752,
+          "ece": 0.042889310955453785,
+          "log_loss": 0.11764231344179403,
+          "mean_effective_evidence": 18.387596899224807
+        },
+        "hidden_best_evidence": {
+          "n": 134,
+          "accuracy": 0.9701492537313433,
+          "brier": 0.04131281677201559,
+          "ece": 0.06910144528225366,
+          "log_loss": 0.16591389838575427,
+          "mean_effective_evidence": 20.970149253731343
+        },
+        "paraphrase_flood": {
+          "n": 3,
+          "accuracy": 1.0,
+          "brier": 0.003437047731266457,
+          "ece": 0.038887516110304915,
+          "log_loss": 0.04072886927058815,
+          "mean_effective_evidence": 26.333333333333332
+        },
+        "support_refute_mix": {
+          "n": 105,
+          "accuracy": 0.8761904761904762,
+          "brier": 0.0988745984085485,
+          "ece": 0.10220807015659701,
+          "log_loss": 0.3508752906526428,
+          "mean_effective_evidence": 17.571428571428573
+        }
+      }
+    }
+  },
+  "paired_test": {
+    "ridge_covariance": {
+      "overall": {
+        "n_claims": 371,
+        "accuracy": {
+          "difference": -0.0026954177897574594,
+          "low": -0.010781671159029615,
+          "high": 0.0
+        },
+        "brier": {
+          "difference": 0.00011531782815113467,
+          "low": -0.0009162363043192402,
+          "high": 0.0012828526985107485
+        },
+        "ece": {
+          "difference": -0.011405125027717601,
+          "low": -0.017290192307962676,
+          "high": 0.0003275586092077576
+        },
+        "log_loss": {
+          "difference": -0.0022590466139127408,
+          "low": -0.006115711849977547,
+          "high": 0.0012102489014450956
+        }
+      },
+      "support_refute_mix": {
+        "n_claims": 105,
+        "accuracy": {
+          "difference": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "brier": {
+          "difference": 0.002799649958859854,
+          "low": 0.0014374888366571255,
+          "high": 0.004177294912463172
+        },
+        "ece": {
+          "difference": 0.0020338103527118567,
+          "low": -0.007974215313760562,
+          "high": 0.01504232923190355
+        },
+        "log_loss": {
+          "difference": 0.006312724941881787,
+          "low": -0.00012307533671397216,
+          "high": 0.011493889647685721
+        }
+      }
+    },
+    "ridge_precision": {
+      "overall": {
+        "n_claims": 371,
+        "accuracy": {
+          "difference": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "brier": {
+          "difference": 0.00418523704888777,
+          "low": 0.0017501031141897473,
+          "high": 0.006574196169826185
+        },
+        "ece": {
+          "difference": 0.021973656339118915,
+          "low": 0.00685748804541132,
+          "high": 0.03843554883465833
+        },
+        "log_loss": {
+          "difference": 0.012881401624312672,
+          "low": -0.003787032575247803,
+          "high": 0.026949460634552534
+        }
+      },
+      "support_refute_mix": {
+        "n_claims": 105,
+        "accuracy": {
+          "difference": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "brier": {
+          "difference": 0.0025894499911741226,
+          "low": -0.003749164405791553,
+          "high": 0.008476900700720687
+        },
+        "ece": {
+          "difference": 0.03900854437479297,
+          "low": -0.007394120762620693,
+          "high": 0.05984836120411959
+        },
+        "log_loss": {
+          "difference": -0.0017353829085159922,
+          "low": -0.050695798803579994,
+          "high": 0.03164487539901263
+        }
+      }
+    }
+  }
+}

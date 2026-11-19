@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering\footnotesize\setlength{\tabcolsep}{3.6pt}
+\caption{Matched controller ablations on 371 test episodes. All policies start with five passages and may add three. Accuracy and false acceptance (False acc.) are percentages.}
+\label{tab:ablation}
+\begin{tabular}{l rrr rrr rrr r}
+\toprule
+& \multicolumn{3}{c}{Overall (frozen)} & \multicolumn{3}{c}{Overall (bounded)} & \multicolumn{3}{c}{Accuracy by condition (bounded)} & \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}
+Method & Accuracy & ECE & False acc. & Accuracy [95\% CI] & ECE & False acc. & Copies & Hidden & Mixed & Passages \\
+\midrule
+Fixed top-5 (count) & 79.5 & 0.083 & 35.6 & 79.5 [75.5, 83.3] & 0.083 & 35.6 & 93.8 & 64.9 & 80.0 & 5.0 \\
+Active, no lineage & 83.0 & 0.066 & 27.7 & 83.0 [79.2, 86.5] & 0.066 & 27.7 & 93.8 & 74.6 & 80.0 & 7.7 \\
+\textbf{\system{} active} & 85.2 & 0.032 & 14.7 & 85.2 [81.7, 88.9] & 0.047 & 14.7 & 92.2 & 94.0 & 64.8 & 6.7 \\
+\quad hard lineage & 85.4 & 0.035 & 14.7 & 85.4 [81.9, 88.9] & 0.036 & 14.7 & 92.2 & 94.0 & 65.7 & 6.7 \\
+\quad no $\sqrt{\weff}$ scaling & 84.9 & 0.049 & 14.7 & 84.9 [81.4, 88.4] & 0.048 & 14.7 & 92.2 & 94.0 & 63.8 & 6.7 \\
+\quad no contradiction & 80.1 & 0.167 & 26.6 & 80.1 [75.7, 84.1] & 0.059 & 26.6 & 94.6 & 91.8 & 46.7 & 6.4 \\
+\quad no active seek & 52.3 & 0.002 & 100.0 & 75.2 [70.6, 79.2] & 0.101 & 42.9 & 95.3 & 64.9 & 62.9 & 7.4 \\
+\bottomrule
+\end{tabular}
+\end{table*}

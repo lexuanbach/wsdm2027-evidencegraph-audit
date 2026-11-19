@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\caption{Lineage estimation against human labels. Intervals use episode-level bootstrap resampling.}
+\label{tab:edges}
+\begin{tabular}{lrrrrr}
+\toprule
+& \multicolumn{3}{c}{Natural pairs ($n=469$)} & Constructed & Clusters \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-5}\cmidrule(lr){6-6}
+System & Precision & Recall & F1 [95\% CI] & F1 [95\% CI] & ARI [95\% CI] \\
+\midrule
+\textbf{\system{} lineage} & 0.472 & 0.712 & 0.568 [0.506,0.625] & 0.967 [0.919,1.000] & 0.401 [0.269,0.551] \\
+Text-reuse clustering & 0.907 & 0.250 & 0.392 [0.295,0.483] & 0.851 [0.763,0.924] & 0.477 [0.320,0.629] \\
+Observed-origin identity & 1.000 & 0.160 & 0.276 [0.188,0.365] & 0.000 [0.000,0.000] & 0.393 [0.253,0.542] \\
+\bottomrule
+\end{tabular}\par\vspace{3pt}
+{\footnotesize\raggedright
+Two-rater agreement: pair $\kappa=0.951$ ($n=128$), partition ARI $=0.983$ ($n=12$). \system{} constructed-cluster ARI $=1.000$. Frozen NLI stance macro-F1 $=79.8$ and ECE $=0.121$ on 7{,}106 construction edges.\par}
+\end{table*}

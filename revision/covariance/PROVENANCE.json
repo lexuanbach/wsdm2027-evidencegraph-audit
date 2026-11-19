@@ -1,0 +1,28 @@
+{
+  "source_commit": "74a40798a80ca161b040e8868b9800aaf5f5dc5f",
+  "source_date": "2026-08-24",
+  "verified_recovery_date": "2026-11-19",
+  "scope": "Historical numeric predictions recovered from a checksum-verified archived snapshot; not refit.",
+  "transformation": "Original claim IDs replaced with c0001...c0730 consistently across arms; mapping is not released. All other numeric fields unchanged.",
+  "original_summary_sha256": "de6c29ffab757ce4c354cae26176f7931b6c97f7499a90ae865ffc63e3aa77a3",
+  "files": [
+    {
+      "file": "ridge_covariance_predictions.jsonl",
+      "original_sha256": "a0523d26462fa3f42ad1f2d70e77a06a8c4f79dc400f53fad3ca5af26616930e",
+      "released_sha256": "5a72c754d6c44f5d02df6af75bdb23b6c923fd7655bd63404c56234c073b895c",
+      "rows": 730
+    },
+    {
+      "file": "ridge_precision_predictions.jsonl",
+      "original_sha256": "a555d5e5e0ce76ea3bfd9857a153d4460531d778a366678eb4492a742cda6066",
+      "released_sha256": "15093da1207da25484f297c8c3cc4469cf1fb4148caa6b17c6f03a9a9edb2d8a",
+      "rows": 730
+    },
+    {
+      "file": "uniform_mean_stance_predictions.jsonl",
+      "original_sha256": "c29ece0d5f94597526984825cc74f9602315acf6afba8656c14fb2d88a022c35",
+      "released_sha256": "7f1c07d609a4acddb1c530b3fd2820b31a649ffc6651c93195956677650bf2da",
+      "rows": 730
+    }
+  ]
+}

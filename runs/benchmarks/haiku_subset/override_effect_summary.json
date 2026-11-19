@@ -1,0 +1,412 @@
+{
+  "bootstrap_resamples": 1000,
+  "datasets": {
+    "averitec_dev": {
+      "dataset": "AVeriTeC",
+      "excluded_case_counts": {
+        "evidencegraph": 19,
+        "evidencegraph_llm_verdict": 19
+      },
+      "excluded_cases": {
+        "evidencegraph": [
+          "132",
+          "153",
+          "16",
+          "168",
+          "183",
+          "26",
+          "266",
+          "321",
+          "4",
+          "41",
+          "425",
+          "440",
+          "441",
+          "447",
+          "451",
+          "487",
+          "5",
+          "67",
+          "8"
+        ],
+        "evidencegraph_llm_verdict": [
+          "132",
+          "153",
+          "16",
+          "168",
+          "183",
+          "26",
+          "266",
+          "321",
+          "4",
+          "41",
+          "425",
+          "440",
+          "441",
+          "447",
+          "451",
+          "487",
+          "5",
+          "67",
+          "8"
+        ]
+      },
+      "labels": [
+        "Supported",
+        "Refuted",
+        "Not Enough Evidence",
+        "Conflicting Evidence/Cherrypicking"
+      ],
+      "methods": {
+        "evidencegraph": {
+          "abstention_rate": 0.09355509355509356,
+          "accuracy": 0.49480249480249483,
+          "accuracy_high": 0.5363825363825364,
+          "accuracy_low": 0.45114345114345117,
+          "brier": 0.8118725094818385,
+          "brier_high": 0.8818121929202171,
+          "brier_low": 0.7419870905933188,
+          "ece": 0.3482126920965062,
+          "ece_high": 0.39106045155655844,
+          "ece_low": 0.3064766118120861,
+          "false_support_rate": 0.47075208913649025,
+          "false_support_rate_high": 0.5213858195211787,
+          "false_support_rate_low": 0.4157063968335036,
+          "macro_f1": 0.32872492728596575,
+          "macro_f1_high": 0.36845323145621295,
+          "macro_f1_low": 0.28731172137555416,
+          "mean_completion_tokens": 353.8212058212058,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 4207.9043659043655,
+          "mean_wall_seconds": 3.8960420758311387,
+          "repair_rate": 0.006237006237006237
+        },
+        "evidencegraph_llm_verdict": {
+          "abstention_rate": 0.09355509355509356,
+          "accuracy": 0.656964656964657,
+          "accuracy_high": 0.6964656964656964,
+          "accuracy_low": 0.6133056133056133,
+          "brier": 0.5185888538212522,
+          "brier_high": 0.5813949984356359,
+          "brier_low": 0.45450222976817195,
+          "ece": 0.19455681310168335,
+          "ece_high": 0.23431482492548952,
+          "ece_low": 0.1551615606167055,
+          "false_support_rate": 0.10863509749303621,
+          "false_support_rate_high": 0.14089295189936635,
+          "false_support_rate_low": 0.07755736611926438,
+          "macro_f1": 0.48840754135690845,
+          "macro_f1_high": 0.5365569372352822,
+          "macro_f1_low": 0.4387063216125624,
+          "mean_completion_tokens": 353.8212058212058,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 4207.9043659043655,
+          "mean_wall_seconds": 3.8960420758311387,
+          "repair_rate": 0.006237006237006237
+        }
+      },
+      "n_cases_compared": 481,
+      "n_cases_in_subset": 500,
+      "paired_versus_reference": {
+        "evidencegraph": {
+          "accuracy": {
+            "difference": -0.16216216216216217,
+            "high": -0.12474012474012475,
+            "low": -0.20166320166320167
+          },
+          "brier": {
+            "difference": 0.29328365566058634,
+            "high": 0.34947784984194014,
+            "low": 0.24310066194770177
+          },
+          "ece": {
+            "difference": 0.15365587899482283,
+            "high": 0.19408547221993352,
+            "low": 0.11751474573744977
+          },
+          "false_support_rate": {
+            "difference": 0.362116991643454,
+            "high": 0.41484564164648907,
+            "low": 0.3110943223443223
+          },
+          "macro_f1": {
+            "difference": -0.1596826140709427,
+            "high": -0.11708403870749892,
+            "low": -0.20587691886597875
+          }
+        }
+      },
+      "reference": "evidencegraph_llm_verdict"
+    },
+    "fever_dev": {
+      "dataset": "FEVER",
+      "excluded_case_counts": {
+        "evidencegraph": 0,
+        "evidencegraph_llm_verdict": 0
+      },
+      "excluded_cases": {
+        "evidencegraph": [],
+        "evidencegraph_llm_verdict": []
+      },
+      "labels": [
+        "SUPPORTS",
+        "REFUTES",
+        "NOT ENOUGH INFO"
+      ],
+      "methods": {
+        "evidencegraph": {
+          "abstention_rate": 0.052,
+          "accuracy": 0.604,
+          "accuracy_high": 0.65,
+          "accuracy_low": 0.562,
+          "brier": 0.5657078009712991,
+          "brier_high": 0.6261276760165779,
+          "brier_low": 0.5038089004575872,
+          "ece": 0.19881624027645753,
+          "ece_high": 0.23775970982813804,
+          "ece_low": 0.15842202760019072,
+          "false_support_rate": 0.5031847133757962,
+          "false_support_rate_high": 0.5596093465355022,
+          "false_support_rate_low": 0.4486864406779661,
+          "macro_f1": 0.5243054863387228,
+          "macro_f1_high": 0.5646342010551754,
+          "macro_f1_low": 0.48749544194956,
+          "mean_completion_tokens": 221.712,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 1412.564,
+          "mean_wall_seconds": 2.461900178495882,
+          "repair_rate": 0.0
+        },
+        "evidencegraph_llm_verdict": {
+          "abstention_rate": 0.052,
+          "accuracy": 0.682,
+          "accuracy_high": 0.722,
+          "accuracy_low": 0.64,
+          "brier": 0.5249083895828499,
+          "brier_high": 0.5945790252948715,
+          "brier_low": 0.4553442978297016,
+          "ece": 0.21621515464468324,
+          "ece_high": 0.25804688991310837,
+          "ece_low": 0.17604462504593268,
+          "false_support_rate": 0.12101910828025478,
+          "false_support_rate_high": 0.15789873620220762,
+          "false_support_rate_low": 0.0870690363673721,
+          "macro_f1": 0.6560451882961754,
+          "macro_f1_high": 0.6964188682192682,
+          "macro_f1_low": 0.6154190338024963,
+          "mean_completion_tokens": 221.712,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 1412.564,
+          "mean_wall_seconds": 2.461900178495882,
+          "repair_rate": 0.0
+        }
+      },
+      "n_cases_compared": 500,
+      "n_cases_in_subset": 500,
+      "paired_versus_reference": {
+        "evidencegraph": {
+          "accuracy": {
+            "difference": -0.07800000000000007,
+            "high": -0.04200000000000004,
+            "low": -0.11599999999999999
+          },
+          "brier": {
+            "difference": 0.040799411388449225,
+            "high": 0.08097308493468958,
+            "low": 0.0017734613597177604
+          },
+          "ece": {
+            "difference": -0.017398914368225715,
+            "high": 0.018424878913790386,
+            "low": -0.0543769856986918
+          },
+          "false_support_rate": {
+            "difference": 0.3821656050955414,
+            "high": 0.43253834793950563,
+            "low": 0.32918307190230545
+          },
+          "macro_f1": {
+            "difference": -0.13173970195745266,
+            "high": -0.09401383577030967,
+            "low": -0.17169881366796821
+          }
+        }
+      },
+      "reference": "evidencegraph_llm_verdict"
+    },
+    "hover_dev": {
+      "dataset": "HoVer",
+      "excluded_case_counts": {
+        "evidencegraph": 6,
+        "evidencegraph_llm_verdict": 6
+      },
+      "excluded_cases": {
+        "evidencegraph": [
+          "33b5cd61-1f42-4477-90e6-f42f0bdff168",
+          "36735d48-7d6e-4c5a-ba97-6ba750ba123f",
+          "3a267976-5141-4f5e-9f54-e907ed69dcff",
+          "590d809c-0154-47ba-837e-5804ecabdb8a",
+          "84c436f8-0817-4e72-8ca6-1857ab074abf",
+          "a24d2ce2-3863-4fff-96c4-944590782b7a"
+        ],
+        "evidencegraph_llm_verdict": [
+          "33b5cd61-1f42-4477-90e6-f42f0bdff168",
+          "36735d48-7d6e-4c5a-ba97-6ba750ba123f",
+          "3a267976-5141-4f5e-9f54-e907ed69dcff",
+          "590d809c-0154-47ba-837e-5804ecabdb8a",
+          "84c436f8-0817-4e72-8ca6-1857ab074abf",
+          "a24d2ce2-3863-4fff-96c4-944590782b7a"
+        ]
+      },
+      "labels": [
+        "SUPPORTED",
+        "NOT_SUPPORTED"
+      ],
+      "methods": {
+        "evidencegraph": {
+          "abstention_rate": 0.242914979757085,
+          "accuracy": 0.5425101214574899,
+          "accuracy_high": 0.5870951417004048,
+          "accuracy_low": 0.4999493927125506,
+          "brier": 0.547282379324071,
+          "brier_high": 0.5855205245721743,
+          "brier_low": 0.5071746876868917,
+          "ece": 0.1485601723510885,
+          "ece_high": 0.19568423953414887,
+          "ece_low": 0.1076822451545089,
+          "false_support_rate": 0.7245762711864406,
+          "false_support_rate_high": 0.7796195846759757,
+          "false_support_rate_low": 0.6652854651603609,
+          "macro_f1": 0.503786801308491,
+          "macro_f1_high": 0.5482509136695589,
+          "macro_f1_low": 0.46016125834551747,
+          "mean_completion_tokens": 247.2246963562753,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 1388.0404858299596,
+          "mean_wall_seconds": 2.741397696471711,
+          "repair_rate": 0.0
+        },
+        "evidencegraph_llm_verdict": {
+          "abstention_rate": 0.242914979757085,
+          "accuracy": 0.5425101214574899,
+          "accuracy_high": 0.5890688259109311,
+          "accuracy_low": 0.4939271255060729,
+          "brier": 0.5780378211489686,
+          "brier_high": 0.622358391324895,
+          "brier_low": 0.5343909440598086,
+          "ece": 0.17764801480861206,
+          "ece_high": 0.2250274089520088,
+          "ece_low": 0.13764899579856615,
+          "false_support_rate": 0.13559322033898305,
+          "false_support_rate_high": 0.176230946161943,
+          "false_support_rate_low": 0.0944206008583691,
+          "macro_f1": 0.502557521966173,
+          "macro_f1_high": 0.5456245918850462,
+          "macro_f1_low": 0.45426955181429624,
+          "mean_completion_tokens": 247.2246963562753,
+          "mean_documents_opened": 20.0,
+          "mean_prompt_tokens": 1388.0404858299596,
+          "mean_wall_seconds": 2.741397696471711,
+          "repair_rate": 0.0
+        }
+      },
+      "n_cases_compared": 494,
+      "n_cases_in_subset": 500,
+      "paired_versus_reference": {
+        "evidencegraph": {
+          "accuracy": {
+            "difference": 0.0,
+            "high": 0.06882591093117407,
+            "low": -0.06477732793522267
+          },
+          "brier": {
+            "difference": -0.030755441824897645,
+            "high": 0.017200451715322692,
+            "low": -0.07877429983540213
+          },
+          "ece": {
+            "difference": -0.02908784245752355,
+            "high": 0.03468576536737949,
+            "low": -0.09688783900344634
+          },
+          "false_support_rate": {
+            "difference": 0.5889830508474576,
+            "high": 0.65109158186864,
+            "low": 0.5226008360386001
+          },
+          "macro_f1": {
+            "difference": 0.0012292793423179793,
+            "high": 0.06270630162930314,
+            "low": -0.05657303366816038
+          }
+        }
+      },
+      "reference": "evidencegraph_llm_verdict"
+    }
+  },
+  "inputs": {
+    "averitec_dev": {
+      "cases": {
+        "bytes": 323684,
+        "path": "data/benchmarks/subset/averitec_dev_n500.jsonl",
+        "rows": 500,
+        "sha256": "d55c2b0bcc21c0b3f32bfba4abb0acd5474afe7c8fba9f7ede68fcbdb7350c7e"
+      },
+      "evidencegraph": {
+        "bytes": 4067988,
+        "path": "artifact/runs/benchmarks/haiku_subset/averitec_dev_evidencegraph_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "8ea6a8b7c03c54a87f4a2fba3197a4ec307e236b2622437aae10c8244164abbc"
+      },
+      "evidencegraph_llm_verdict": {
+        "bytes": 4063923,
+        "path": "artifact/runs/benchmarks/haiku_subset/averitec_dev_evidencegraph_llm_verdict_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "80a7bcc86f0827c2c48409302a36d9966566181ec87c80906f28ad1b1e6f6953"
+      }
+    },
+    "fever_dev": {
+      "cases": {
+        "bytes": 136573,
+        "path": "data/benchmarks/subset/fever_dev_n500.jsonl",
+        "rows": 500,
+        "sha256": "5801e9ba3fe6e457e99460cf3dbec243108477a384124dff2e80be89fe7a1d9c"
+      },
+      "evidencegraph": {
+        "bytes": 1264819,
+        "path": "artifact/runs/benchmarks/haiku_subset/fever_dev_evidencegraph_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "c30f1491f74677796e98c8c29e7b966ea96d2425b982b78793727282d3a39b64"
+      },
+      "evidencegraph_llm_verdict": {
+        "bytes": 1281595,
+        "path": "artifact/runs/benchmarks/haiku_subset/fever_dev_evidencegraph_llm_verdict_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "39ad59fac6d491bd41efb64bea85813ed6a910001495db8c6fa469217554ee5f"
+      }
+    },
+    "hover_dev": {
+      "cases": {
+        "bytes": 213578,
+        "path": "data/benchmarks/subset/hover_dev_n500.jsonl",
+        "rows": 500,
+        "sha256": "ca615447635196aca153cfe29e6c080501a53cf152e46d58412d88acb00ffd04"
+      },
+      "evidencegraph": {
+        "bytes": 1277026,
+        "path": "artifact/runs/benchmarks/haiku_subset/hover_dev_evidencegraph_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "23aed3832d699013d5b5acef0a0ac4989dfd5ad142de21c31c8cd0ef71e4098a"
+      },
+      "evidencegraph_llm_verdict": {
+        "bytes": 1304986,
+        "path": "artifact/runs/benchmarks/haiku_subset/hover_dev_evidencegraph_llm_verdict_haiku45.jsonl",
+        "rows": 500,
+        "sha256": "d0f4d9e8ba5a09ea8365150561a53aee763de5e0575bd54dc4db5179fb64d9d2"
+      }
+    }
+  },
+  "model_tag": "haiku45",
+  "protocol": "haiku-subset-matrix-evaluation-v1",
+  "reference": "evidencegraph_llm_verdict"
+}
