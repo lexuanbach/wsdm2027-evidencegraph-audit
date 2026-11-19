@@ -289,7 +289,7 @@ def ablation_table(rollout: dict[str, Any], bounded: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def baseline_table(base: dict[str, Any]) -> str:
+def baseline_table(base: dict[str, Any], saved: dict[str, Any] | None = None) -> str:
     order = (
         ("count_sum", "Count (no dependence)"),
         ("domain_dedup_vote", "Domain dedup vote"),
@@ -306,7 +306,7 @@ def baseline_table(base: dict[str, Any]) -> str:
     lines = [
         r"\begin{table}[t]",
         r"\centering\scriptsize\setlength{\tabcolsep}{2.4pt}",
-        r"\caption{Aggregation on 371 held-out construction episodes. Differences compare \system{} soft GLS with each rule; accuracy and false acceptance are percentages.}",
+        r"\caption{Aggregation of all candidates on 371 held-out construction episodes. Differences compare frozen \system{} soft GLS with each original rule. Acc., False acc., True, and Mixed are percentages of overall accuracy, false acceptance, true-claim accuracy, and mixture accuracy. The lower panel uses recovered predictions; omitted contrasts and class-specific rates are not recomputed.}",
         r"\label{tab:baselines}",
         r"\begin{tabular}{lrrrrrr}",
         r"\toprule",
@@ -335,6 +335,12 @@ def baseline_table(base: dict[str, Any]) -> str:
             _pct(blk["test"]["groups"]["support_refute_mix"]["accuracy"]),
         ]
         lines.append(" & ".join(row) + r" \\")
+    if saved is not None:
+        lines += [r"\midrule", r"\multicolumn{7}{l}{\emph{Historical prediction controls (same test claims)}} \\"]
+        for arm, label in [("ridge_covariance", "Covariance ridge"), ("ridge_precision", "Precision ridge"), ("uniform_mean_stance", "Uniform mean stance")]:
+            g = saved["metrics"][arm]["test"]
+            o = g["overall"]
+            lines.append(" & ".join([label, _pct(o["accuracy"]), "n/a", f"{o['ece']:.3f}", "n/a", "n/a", _pct(g["support_refute_mix"]["accuracy"])]) + r" \\")
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
     return "\n".join(lines)
 
@@ -531,8 +537,12 @@ def main() -> None:
         SUB / "bounded_precision/summary.json",
     ]
     base = _load(SUB / "episode_baselines/summary.json")
-    (TABLE_DIR / "table_baselines.tex").write_text(baseline_table(base), encoding="utf-8")
-    sources["table_baselines.tex"] = [SUB / "episode_baselines/summary.json"]
+    saved_path = Path(__file__).resolve().parents[1] / "revision/covariance/saved-prediction-audit.json"
+    if not saved_path.exists():
+        saved_path = PROJECT_ROOT / "artifact/runs/saved_covariance/saved-prediction-audit.json"
+    saved = _load(saved_path)
+    (TABLE_DIR / "table_baselines.tex").write_text(baseline_table(base, saved), encoding="utf-8")
+    sources["table_baselines.tex"] = [SUB / "episode_baselines/summary.json", saved_path]
     if args.benchmarks.is_file():
         bench = _load(args.benchmarks)
         override_path = args.benchmarks.parent / "override_effect_summary.json"

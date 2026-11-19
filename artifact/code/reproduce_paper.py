@@ -31,6 +31,7 @@ import hashlib
 import json
 import math
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -199,6 +200,11 @@ def main() -> None:
     failures: list[str] = []
     print("Paper tables (byte-identical to the camera-ready fragments):")
     failures += rebuild_tables(args.out)
+    print("Figure 2 (analytical information, not empirical model confidence):")
+    cmd = [sys.executable, str(CODE / "make_information_figure.py"), "--output", str(args.out / "figures")]
+    if not use_tex: cmd.append("--no-tex")
+    subprocess.run(cmd, check=True)
+    print("  ok   analytical information curves")
     print("Figure 3:")
     failures += rebuild_natural_figure(args.out, use_tex)
     print("Supplement:")

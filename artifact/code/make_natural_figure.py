@@ -31,7 +31,7 @@ import paperfig as P
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SUMMARY = PROJECT_ROOT / "artifact/runs/natural_lineage_acquisition/summary.json"
 FIGURE_DIR = PROJECT_ROOT / "manuscript/figures"
-# fallback layout: code/, runs/ and manuscript/ are siblings
+# camera-ready layout: code/, runs/ and manuscript/ are siblings
 ART = Path(__file__).resolve().parents[1]
 if not SUMMARY.exists():
     SUMMARY = ART / "runs/natural_lineage_acquisition/summary.json"
@@ -39,11 +39,11 @@ if not SUMMARY.exists():
 
 # top row first; the oracle is the ceiling, ours is the bottom row
 POLICIES = (
-    ("oracle_gold_ceiling", "oracle that sees gold"),
-    ("mmr_text", "text diversity (MMR)"),
-    ("neardup_diverse", "skip near-duplicates"),
-    ("observed_origin_diverse", "one per recorded origin"),
-    ("learned_hard_dependence", "learned lineage, hard"),
+    ("oracle_gold_ceiling", "Gold-evidence ceiling"),
+    ("mmr_text", "MMR diversity"),
+    ("neardup_diverse", "Near-duplicate diversity"),
+    ("observed_origin_diverse", "Observed-origin diversity"),
+    ("learned_hard_dependence", "Hard lineage diversity"),
     ("learned_soft_find_indep", r"\textbf{EvidenceGraph}, soft"),
 )
 DATASETS = (

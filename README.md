@@ -14,9 +14,11 @@ EvidenceGraph scores each retrieved passage, estimates which passages share an
 origin, aggregates evidence so that copies count once, and exposes these
 controls as independently switchable stages. This repository contains the
 implementation, the stored outputs behind every table and Figure 3 in the
-paper, and a one-command script that rebuilds them. Figure 2 (duplication), the
-compute totals and several diagnostic numbers in the text come from recorded
-summaries whose inputs are not included; see [Limits](#limits-of-this-release). The supplementary material is in
+paper, and a one-command script that rebuilds them. Figure 2 is an analytical
+illustration of GLS information under known covariance, not an empirical
+language-model confidence result. The audit revision withdraws the unsupported
+historical duplication, residual-correlation, calibration and compute claims;
+see [Limits](#limits-of-this-release). The supplementary material is in
 [`supplement.pdf`](supplement.pdf).
 
 ## Contents
@@ -25,7 +27,7 @@ summaries whose inputs are not included; see [Limits](#limits-of-this-release). 
 |---|---|
 | `artifact/code/evidencegraph/` | Library: episode schema and construction, retrieval, NLI and lineage (dependence) features, effective-evidence aggregation, controller, evaluation metrics, bootstrap. |
 | `artifact/code/*.py` | Command-line entry points for every pipeline stage (listed below) and for rebuilding results. |
-| `artifact/code/reproduce_paper.py` | Rebuilds all tables, Figure 3 and the supplement tables from stored outputs and checks them. |
+| `artifact/code/reproduce_paper.py` | Rebuilds all tables, analytical Figure 2, Figure 3 and the supplement tables from stored outputs and checks them. |
 | `artifact/runs/` | Stored outputs (summaries, frozen predictions, deidentified audit inputs). Each summary lists its input files with SHA-256 digests under `inputs`. |
 | `annotation/score/report_2026-08-24.json` | Aggregate human lineage-audit scores (deidentified, no item text). |
 | `expected/paper_tables.sha256` | Digests of the camera-ready table fragments, used to check the rebuild byte for byte. |
@@ -76,15 +78,14 @@ and compared byte for byte with the camera-ready versions.
 | Table 1, lineage estimation vs. human labels | rebuilt, identical | `subset_edge_episode/nli/summary_test.json`, `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
 | Table 2, natural-lineage recovery by corpus | rebuilt, identical | `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
 | Table 3, audit by predicted-probability bin | rebuilt, identical | `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
-| Table 4, aggregation on 371 held-out episodes | rebuilt, identical | `subset_edge_episode/episode_baselines/summary.json` | `build_subset_tables.py` |
+| Table 4, aggregation on 371 held-out episodes | rebuilt, identical | `subset_edge_episode/episode_baselines/summary.json`, `saved_covariance/saved-prediction-audit.json` | `build_subset_tables.py` |
 | Table 5, controller ablations | rebuilt, identical | `subset_edge_episode/controller_evaluation/{summary.json,predictions.jsonl}`, `subset_edge_episode/bounded_precision/summary.json` | `build_subset_tables.py` |
 | Table 6, end-to-end results on frozen retrieval | rebuilt, identical | `benchmarks/haiku_subset/{evaluation_summary,override_effect_summary}.json` | `build_subset_tables.py` |
 | Figure 3, acquisition on natural lineage | rebuilt (plus a CSV of its 18 estimates and a numeric table) | `natural_lineage_acquisition/summary.json` | `make_natural_figure.py` |
 | Supplement, threshold tables (3) | rebuilt, matches stored grid | `lineage_threshold/audit_inputs.json` | `threshold_sensitivity.py` |
 | Supplement, historical covariance tables (2) | rebuilt, matches stored values | `saved_covariance/*_predictions.jsonl` | `saved_covariance_metrics.py` |
 | Figure 1, overview | diagram, no data | | |
-| Figure 2, duplication intervention | not rebuilt offline (see limits) | | `run_duplication.py`, `summarize_duplication.py`, `make_duplication_figure.py` |
-| Compute totals (Availability paragraph) | recorded totals, not rebuilt offline | | `build_subset_compute_accounting.py` |
+| Figure 2, analytical information | deterministic formula evaluation, not empirical data | unit-variance equicorrelation model | `make_information_figure.py` |
 
 Each script can also be run on its own, for example
 `python artifact/code/threshold_sensitivity.py` or
@@ -92,14 +93,11 @@ Each script can also be run on its own, for example
 
 ## Rerunning the full pipeline
 
-The full pipeline rebuilds the stored outputs from the public benchmarks. It
-needs the upstream data, model weights and services listed here, and roughly
-the compute recorded in the paper: on one Apple-silicon workstation, 3.9
-GPU-hours for the duplication intervention, 0.1 hours to score 27,788
-entailment edges, and 1.4 hours for 1,500 graph selections; plus 3.6 wall-hours
-of hosted inference (4,428 answer calls). Install the extra packages with
-`pip install -r requirements-full.txt`. Paths below are relative to the
-repository root, which every script treats as its project root.
+The full pipeline requires additional data, weights and services. It cannot
+reproduce the historical experiments from this repository alone. The retained
+records do not support a complete runtime or token-accounting estimate. Install
+extra packages with `pip install -r requirements-full.txt`. Paths below are
+relative to the repository root.
 
 **Inputs to obtain from their owners** (not redistributed here):
 
@@ -149,7 +147,7 @@ seed guarantee).
    Table 4 and Table 5 summaries; the covariance controls (`audit_alternative_covariance.py`,
    `audit_joint_error_covariance.py`, `audit_stance_ridge_no_override.py`,
    `freeze_stance_ridge_dev_specs.py`) analyze the same frozen predictions.
-4. Duplication intervention (Figure 2): `run_duplication.py --model
+4. Historical duplication protocol (not the revised Figure 2): `run_duplication.py --model
    qwen2.5:3b-instruct` and `--model qwen2.5:1.5b` with `--seed` 103, 104 and
    105 on the first 40 stable-hashed test false claims, then
    `summarize_duplication.py` and `make_duplication_figure.py`.
@@ -170,8 +168,9 @@ seed guarantee).
    `build_subset_compute_accounting.py`.
 
 Unless stated otherwise, confidence intervals use 1,000 paired claim (or
-claim-cluster) bootstrap resamples, and every learned component is selected on
-training and development data before the test split is scored once.
+claim-cluster) bootstrap resamples, and the recovered covariance arms retain the archived development-log-loss
+choices. The historical test predictions are reanalyzed without refitting;
+this does not verify unavailable training or selection records for other arms.
 
 ## Limits of this release
 
@@ -179,10 +178,16 @@ training and development data before the test split is scored once.
   NLI predictions, complete lineage predictions and frozen lineage-estimator
   weights of the 2,298-episode subset are not included, and no dataset licence
   is assigned. The stored summaries record the SHA-256 of each of these inputs.
-- **Figure 2 and the compute totals cannot be rebuilt offline.** The
-  three-seed duplication summaries (`artifact/runs/duplication/`) and the
-  benchmark matrix summary that feed them were not recovered. The values appear
-  in the paper; the code to regenerate them from a full rerun is included.
+- **Unsupported historical claims were withdrawn.** The three-seed duplication
+  summaries, comparable contexts/probability outputs, residual-error audit and
+  post-hoc calibration fitting protocol are unavailable. The revised manuscript
+  does not report their numerical claims. Historical protocol scripts remain
+  for inspection; their presence is not evidence of successful reproduction.
+- **Table 6 uses two populations.** Absolute rows use complete cases
+  (FEVER 498, HoVer 494, AVeriTeC 447); override differences use all available
+  paired generations (500, 494, 481). They are not row subtractions on a common
+  intersection. The FEVER Figure 3 estimate predates a reported logging fix
+  whose corrected outputs are unavailable.
 - **Human-audit data are aggregates.** Annotator responses, item text,
   original item IDs and blinding keys are withheld to protect the blinded
   protocol. The threshold analysis uses deidentified numeric consensus labels
