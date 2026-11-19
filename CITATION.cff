@@ -1,31 +1,48 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the paper below."
-title: "EvidenceGraph: code and stored outputs"
+message: If you use this software, please cite the paper below.
+title: 'EvidenceGraph: code and stored outputs'
 license: MIT
-repository-code: "https://github.com/lexuanbach/wsdm2027-evidencegraph-audit"
+repository-code: https://github.com/lexuanbach/wsdm2027-evidencegraph-audit
 authors:
-  - family-names: Le
-    given-names: Xuan-Bach
-  - family-names: Tran-Truong
-    given-names: Phat T.
-  - family-names: Ha Xuan
-    given-names: Son
-  - family-names: Nguyen
-    given-names: Duy
+- family-names: Le
+  given-names: Xuan-Bach
+  orcid: https://orcid.org/0009-0003-6848-5403
+  affiliation: Ho Chi Minh City University of Technology (HCMUT), VNU-HCM
+- family-names: Tran-Truong
+  given-names: Phat T.
+  orcid: https://orcid.org/0000-0003-3199-6333
+  affiliation: Ho Chi Minh City University of Technology (HCMUT), VNU-HCM
+- family-names: Ha Xuan
+  given-names: Son
+  orcid: https://orcid.org/0000-0002-5336-0566
+  affiliation: RMIT University
+- family-names: Nguyen
+  given-names: Duy
+  orcid: https://orcid.org/0009-0000-6348-8830
+  affiliation: University of Economics Ho Chi Minh City
 preferred-citation:
   type: conference-paper
-  title: "EvidenceGraph: Measuring and Controlling Repeated Evidence in Retrieval-Augmented Verification"
+  title: 'EvidenceGraph: Measuring and Controlling Repeated Evidence in Retrieval-Augmented Verification'
   authors:
-    - family-names: Le
-      given-names: Xuan-Bach
-    - family-names: Tran-Truong
-      given-names: Phat T.
-    - family-names: Ha Xuan
-      given-names: Son
-    - family-names: Nguyen
-      given-names: Duy
-  collection-title: "Proceedings of the Twentieth ACM International Conference on Web Search and Data Mining (WSDM '27)"
+  - family-names: Le
+    given-names: Xuan-Bach
+    orcid: https://orcid.org/0009-0003-6848-5403
+    affiliation: Ho Chi Minh City University of Technology (HCMUT), VNU-HCM
+  - family-names: Tran-Truong
+    given-names: Phat T.
+    orcid: https://orcid.org/0000-0003-3199-6333
+    affiliation: Ho Chi Minh City University of Technology (HCMUT), VNU-HCM
+  - family-names: Ha Xuan
+    given-names: Son
+    orcid: https://orcid.org/0000-0002-5336-0566
+    affiliation: RMIT University
+  - family-names: Nguyen
+    given-names: Duy
+    orcid: https://orcid.org/0009-0000-6348-8830
+    affiliation: University of Economics Ho Chi Minh City
+  collection-title: Proceedings of the Twentieth ACM International Conference on Web Search and Data Mining
+    (WSDM '27)
   publisher:
     name: ACM
   year: 2027
-  doi: "10.1145/3862322.3863670"
+  doi: 10.1145/3862322.3863670

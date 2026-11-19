@@ -11,7 +11,7 @@ Code and stored outputs for the WSDM 2027 paper
 Retrieval-augmented fact verification can count the same evidence several times
 when passages are copied, mirrored, or paraphrased from one origin.
 EvidenceGraph scores each retrieved passage, estimates which passages share an
-origin, aggregates evidence so that copies count once, and exposes these
+origin, tests lineage-based aggregation of repeated evidence, and exposes these
 controls as independently switchable stages. This repository contains the
 implementation, the stored outputs behind every table and Figure 3 in the
 paper, and a one-command script that rebuilds them. Figure 2 is an analytical
@@ -77,10 +77,10 @@ and compared byte for byte with the camera-ready versions.
 |---|---|---|---|
 | Table 1, lineage estimation vs. human labels | rebuilt, identical | `subset_edge_episode/nli/summary_test.json`, `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
 | Table 2, natural-lineage recovery by corpus | rebuilt, identical | `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
-| Table 3, audit by predicted-probability bin | rebuilt, identical | `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
-| Table 4, aggregation on 371 held-out episodes | rebuilt, identical | `subset_edge_episode/episode_baselines/summary.json`, `saved_covariance/saved-prediction-audit.json` | `build_subset_tables.py` |
-| Table 5, controller ablations | rebuilt, identical | `subset_edge_episode/controller_evaluation/{summary.json,predictions.jsonl}`, `subset_edge_episode/bounded_precision/summary.json` | `build_subset_tables.py` |
-| Table 6, end-to-end results on frozen retrieval | rebuilt, identical | `benchmarks/haiku_subset/{evaluation_summary,override_effect_summary}.json` | `build_subset_tables.py` |
+| Archived stratum fragment (not a numbered main-paper table) | rebuilt, identical | `annotation/score/report_2026-08-24.json` | `build_subset_tables.py` |
+| Table 3, aggregation on 371 held-out episodes | rebuilt, identical | `subset_edge_episode/episode_baselines/summary.json`, `saved_covariance/saved-prediction-audit.json` | `build_subset_tables.py` |
+| Table 4, controller ablations | rebuilt, identical | `subset_edge_episode/controller_evaluation/{summary.json,predictions.jsonl}`, `subset_edge_episode/bounded_precision/summary.json` | `build_subset_tables.py` |
+| Table 5, end-to-end results on frozen retrieval | rebuilt, identical | `benchmarks/haiku_subset/{evaluation_summary,override_effect_summary}.json` | `build_subset_tables.py` |
 | Figure 3, acquisition on natural lineage | rebuilt (plus a CSV of its 18 estimates and a numeric table) | `natural_lineage_acquisition/summary.json` | `make_natural_figure.py` |
 | Supplement, threshold tables (3) | rebuilt, matches stored grid | `lineage_threshold/audit_inputs.json` | `threshold_sensitivity.py` |
 | Supplement, historical covariance tables (2) | rebuilt, matches stored values | `saved_covariance/*_predictions.jsonl` | `saved_covariance_metrics.py` |
@@ -144,7 +144,7 @@ seed guarantee).
    `run_coordinated_fabrication_stress.py` and `run_controller_evaluation.py`
    in order;
    `run_episode_baselines.py` and `reanalyze_bounded_precision.py` produce the
-   Table 4 and Table 5 summaries; the covariance controls (`audit_alternative_covariance.py`,
+   Table 3 and Table 4 summaries; the covariance controls (`audit_alternative_covariance.py`,
    `audit_joint_error_covariance.py`, `audit_stance_ridge_no_override.py`,
    `freeze_stance_ridge_dev_specs.py`) analyze the same frozen predictions.
 4. Historical duplication protocol (not the revised Figure 2): `run_duplication.py --model
@@ -155,7 +155,7 @@ seed guarantee).
    FEVER, HoVer and AVeriTeC retrieval pools with the three dependence models
    (top-20 pool, five initial sources, three actions, MMR lambda 0.75, 1,000
    bootstrap resamples).
-6. End-to-end benchmarks (Table 6): `run_lexical_retrieval.py`,
+6. End-to-end benchmarks (Table 5): `run_lexical_retrieval.py`,
    `run_benchmark_retrieval.py`, `fuse_benchmark_retrieval.py`,
    `run_benchmark_answering.py --backend bedrock`,
    `run_evidencegraph_benchmark_matrix.py`, `run_bedrock_transfer_matrix.py`,
@@ -183,7 +183,7 @@ this does not verify unavailable training or selection records for other arms.
   post-hoc calibration fitting protocol are unavailable. The revised manuscript
   does not report their numerical claims. Historical protocol scripts remain
   for inspection; their presence is not evidence of successful reproduction.
-- **Table 6 uses two populations.** Absolute rows use complete cases
+- **Table 5 uses two populations.** Absolute rows use complete cases
   (FEVER 498, HoVer 494, AVeriTeC 447); override differences use all available
   paired generations (500, 494, 481). They are not row subtractions on a common
   intersection. The FEVER Figure 3 estimate predates a reported logging fix
@@ -195,7 +195,7 @@ this does not verify unavailable training or selection records for other arms.
 - **Covariance predictions are historical.** The three saved prediction arms
   (359 development and 371 test claims) are recomputed, not refit; claim IDs are
   replaced consistently (`artifact/runs/saved_covariance/PROVENANCE.json`).
-- **Hosted inference is not seed-controlled.** Rerunning Table 6 can differ
+- **Hosted inference is not seed-controlled.** Rerunning Table 5 can differ
   slightly from the stored predictions.
 
 ## Data and licences
@@ -224,3 +224,11 @@ AVeriTeC and Wikidata keep the terms of those sources; see
 
 Xuan-Bach Le (corresponding author); the e-mail address is on the paper.
 Please open a GitHub issue for questions about the code.
+
+## Test support
+
+The supported public suite and the working archive's legacy construction tests
+are different scopes. [TEST-SUPPORT.md](TEST-SUPPORT.md) records the remaining
+legacy failures, prerequisites and retired claims; no missing-input test is
+reclassified as a successful rerun. The current manuscript has five numbered
+main tables; the rebuild also preserves two archived table fragments.
